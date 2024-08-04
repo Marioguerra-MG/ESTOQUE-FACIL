@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+/* Cabeçalho do contêiner */
+.conteinerCabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+/* Estilo para o botão de gravação */
+#btnGravar, #salvarSaida {
+    width: 100px;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: rgb(57, 57, 226);
+    cursor: pointer; /* Adicionado para indicar que é clicável */
+}
+
+/* Contêiner da tabela */
+.saidaTable {
+    width: 90%;
+    margin: 20px auto; /* Adicionado margem para centralizar e afastar do topo */
+    height: inherit;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+/* Estilo da barra de rolagem */
+.saidaTable::-webkit-scrollbar {
+    width: 12px;
+    background-color: whitesmoke;
+}
+
+.saidaTable::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: darkgray;
+}
+
+/* Estilo da tabela */
+table {
+    width: 100%;
+    border-spacing: 0; /* Removido o espaçamento para uma tabela mais compacta */
+    border-collapse: collapse;
+}
+
+/* Cabeçalhos da tabela */
+thead {
+    background-color: whitesmoke;
+}
+
+thead tr th {
+    padding: 10px;
+    text-align: start;
+}
+
+/* Estilo das linhas da tabela */
+tr {
+    border-bottom: 1px solid rgb(238, 235, 235);
+}
+
+tbody tr td {
+    vertical-align: top;
+    padding: 8px; /* Ajustado para maior consistência */
+    background-color: white;
+}
+
+/* Estilo das células de ação */
+thead tr th.acao, tbody tr td.acao {
+    text-align: center;
+    width: 100px;
+}
+
+tbody tr td.acao button {
+    background: none;
+    border: none;
+}
+
+tbody tr td.acao i {
+    font-size: 30px;
+    color: rgb(245, 82, 82);
+}
+
+/* Modal */
+.modalConteinerSaida {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    justify-content: center;
+    align-items: center;
+}
+
+.modalConteinerSaida.active {
+    display: flex; /* Mostra o modal quando ativo */
+}
+
+.modalSaida {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px; /* Largura padrão do modal */
+    height: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.modalSaida form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modalSaida form input {
+    border-radius: 5px;
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid black;
+    outline: none;
+}
+
+#searchInput {
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+    padding: 0 15px;
+}
+
+/* Estilo responsivo para telas menores */
+@media (max-width: 846px) {
+    #btnGravar, #salvarSaida {
+        padding: 5px;
+        font-size: 10px; /* Ajustado para ser um pouco maior que 10px */
+    }
+
+    thead tr th {
+        font-size: 10px; /* Ajustado para melhorar a legibilidade */
+    }
+
+    tbody {
+        font-size: 10px; /* Ajustado para melhorar a legibilidade */
+    }
+
+    thead tr th.acao {
+        font-size: 10px;
+        width: auto !important;
+    }
+
+    td button i {
+        font-size: 10px; /* Ajustado para melhor visualização */
+    }
+
+    .modalSaida {
+        width: 90% !important;
+    }
+
+    .modalSaida label {
+        font-size: 10px;
+    }
+
+    #searchInput{
+        width: 50%;
+    }
+
+    #dataFormatoCss{
+        flex-direction: column; 
+        align-items: flex-start;
+        width: 100%
+    }
+}
+
+@media (max-height: 710px) {
+    .conteinerCabecalho{
+        height: 100px;
+    }
+}
+

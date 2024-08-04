@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.conteinerCabecalho {
+    width: 90%;
+    height: 10%;
+    background: white;
+    border-bottom: 1px solid darkgray !important;
+    border-radius: 10px 10px 0 0;
+}
+
+.cabecalhoLogo {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    gap: 50px;
+}
+
+.logoIcone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#textoLogo {
+    font-size: 25px;
+}
+
+#iconeVoltarLogo {
+    font-size: 18px;
+    color: black;
+    transition: transform 0.3s ease;
+}
+
+#iconeVoltarLogo:hover {
+    transform: scale(1.5);
+}
+
+#btnSubtrair {
+    width: 100px;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: rgb(57, 57, 226);
+}
+
+/* Modal styles */
+
+.modal-conteiner {
+    width: 90%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 30px;
+}
+
+.modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.modal-conteiner input {
+    width: 300px;
+    height: 35px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid;
+    padding: 0 15px;
+}
+
+.modalRegistroDeRetirada {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+}
+
+.modalRegistro {
+    display: flex;
+    justify-content: space-around;
+}
+
+.modalRegistro input {
+    width: 300px;
+    height: 35px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid;
+    padding: 0 15px;
+}
+
+#botaoRegistrarSaida {
+    width: 150px;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: rgb(57, 57, 226);
+}
+
+.registrarSaida {
+    width: 90%;
+    height: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid darkgray !important;
+}
+
+/* Responsividade */
+
+@media (max-width: 1220px) {
+    .cabecalhoLogo {
+        flex-direction: row;
+        gap: 20px;
+        text-align: center;
+    }
+
+    #textoLogo {
+        font-size: 20px;
+    }
+
+    .logoIcone {
+        gap: 20px;
+    }
+
+    .modal-conteiner input,
+    .modalRegistro input {
+        width: 30%;
+        height: 35px;
+        font-size: 12px;
+    }
+
+
+    .modal {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        gap:5px;
+    }
+
+    #botaoRegistrarSaida {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+@media (max-height: 710px) {
+    .header {
+        background-color: black;
+        flex-direction: column; /* Altera a direção do layout para coluna */
+    }
+    
+    .buscarHeader {
+        flex-direction: column; /* Alinha os elementos de busca em uma coluna */
+        width: 100%; /* Faz a busca ocupar toda a largura disponível */
+    }
+
+    #search {
+        width: 100%; /* Faz o campo de busca ocupar toda a largura disponível */
+    }
+
+    .modalSaida {
+        width: 90%; /* Ajusta a largura do modal para se ajustar melhor em uma tela pequena */
+        height: auto; /* Ajusta a altura automaticamente */
+    }
+
+    .modal-conteiner{
+        height: 150px;
+    }
+}

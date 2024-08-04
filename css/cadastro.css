@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+button {
+    cursor: pointer;
+}
+
+.conteiner {
+    width: 90%;
+    background: white;
+    margin-top: 10px;
+    border-bottom: 1px solid darkgray !important;
+    border-radius: 10px 10px 0 0;
+}
+
+.header {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+}
+
+.headerLogoVoltar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    font-size: 20px;
+}
+
+#headerVoltar {
+    color: rgb(46, 46, 46);
+    cursor: pointer;
+}
+
+#iconeVoltar {
+    transition: transform 0.3s ease;
+}
+
+#iconeVoltar:hover {
+    transform: scale(2);
+    color: rgb(46, 46, 46);
+}
+
+.buscarHeader {
+    width: 850px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header span {
+    font-weight: 300;
+    font-size: 30px;
+    word-break: break-all;
+}
+
+.botoesHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    gap: 5px;
+}
+
+#add, #pesquisar, #grafico {
+    width: 100px;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: rgb(57, 57, 226);
+}
+
+#search {
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px;
+    outline: none;
+    text-align: center;
+}
+
+.divTable {
+    width: 90%;
+    height: inherit;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.divTable::-webkit-scrollbar {
+    width: 12px;
+    background-color: whitesmoke;
+}
+
+.divTable::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: darkgray;
+}
+
+table {
+    width: 100%;
+    border-spacing: 10px;
+    word-break: break-all;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: whitesmoke;
+}
+
+tr {
+    border-bottom: 1px solid rgb(238, 235, 235) !important;
+}
+
+tbody tr td {
+    vertical-align: top;
+    padding: 6px;
+    max-width: 50px;
+    background-color: white;
+}
+
+thead tr th {
+    padding: 5px;
+    text-align: start;
+}
+
+thead tr th.acao, tbody tr td.acao {
+    text-align: center;
+    width: 100px;
+}
+
+.low-stock {
+    color: red;
+}
+
+
+@media (max-width: 1150px) {
+    .header span {
+        font-size: 20px;
+    }
+
+    .headerLogoVoltar {
+        gap: 10px;
+    }
+
+    #add, #pesquisar, #grafico {
+        width: 80px;
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    #search {
+        width: 300px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .buscarHeader {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    thead tr th {
+        font-size: 10px;
+    }
+
+    tbody {
+        font-size: 12px;
+    }
+
+    thead tr th.acao {
+        font-size: 10px;
+        width: auto !important;
+    }
+
+    td button i {
+        font-size: 18px !important;
+    }
+
+    .modal {
+        width: 90% !important;
+    }
+
+    .modal label {
+        font-size: 12px !important;
+    }
+}
+
+.modal-conteiner {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.modal label {
+    font-size: 14px;
+    width: 100%;
+}
+
+.modal input {
+    outline: none;
+    padding: 5px 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.modal button {
+    margin: 10px auto;
+    outline: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: none;
+    background-color: rgb(57, 57, 226);
+    color: white;
+}
+
+.active {
+    display: flex;
+}
+
+.active .modal {
+    animation: modal .4s;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+td button {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 25px;
+}
+
+td button i:first-child {
+    margin-right: 10px;
+}
